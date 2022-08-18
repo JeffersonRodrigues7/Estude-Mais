@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/student_nav_courses">
+
+    <fragment
+        android:id="@+id/nav_ranking"
+        android:name="br.edu.ufabc.estude_mais.view.RankingFragment"
+        android:label="@string/menu_ranking"
+        tools:layout="@layout/fragment_ranking">
+    <argument
+        android:name="courseId"
+        app:argType="long"
+        android:defaultValue="-1L" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/student_nav_courses"
+        android:name="br.edu.ufabc.estude_mais.view.student.CoursesListFragment"
+        tools:layout="@layout/student_fragment_courses_list"
+        android:label="Cursos Matriculados" >
+        <action
+            android:id="@+id/action_student_nav_courses_to_courseFragment"
+            app:destination="@id/courseFragment" />
+        <action
+            android:id="@+id/action_student_nav_courses_to_coursesSearchFragment"
+            app:destination="@id/coursesSearchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/student_nav_profile"
+        android:name="br.edu.ufabc.estude_mais.view.student.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/student_fragment_profile" />
+
+    <fragment
+        android:id="@+id/courseFragment"
+        android:name="br.edu.ufabc.estude_mais.view.student.CourseFragment"
+        android:label="Curso"
+        tools:layout="@layout/student_fragment_course" >
+        <argument
+            android:name="courseId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <action
+            android:id="@+id/action_courseFragment_to_nav_ranking"
+            app:destination="@id/nav_ranking" />
+    </fragment>
+    <fragment
+        android:id="@+id/coursesSearchFragment"
+        android:name="br.edu.ufabc.estude_mais.view.student.CoursesSearchFragment"
+        android:label="Procurar um curso"
+        tools:layout="@layout/student_fragment_search_couses" >
+        <action
+            android:id="@+id/action_coursesSearchFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ranking_nav_courses"
+        android:name="br.edu.ufabc.estude_mais.view.RankingGlobalFragment"
+        android:label="Ranking Global"
+        tools:layout="@layout/fragment_ranking_global" />
+</navigation>

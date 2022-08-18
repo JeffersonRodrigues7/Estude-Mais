@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_small"
+    tools:context=".view.student.CourseFragment">
+
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/course_name_text"
+        android:textSize="@dimen/medium_text_size"
+        android:background="@color/primaryColor"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/course_init_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:text="@string/course_init_date_text"
+        android:textColor="@color/primaryColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/course_teacher"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/student_course_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:maxLength="500"
+        android:maxLines="10"
+        android:minHeight="48dp"
+        android:text="@string/course_description_text"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/course_init_date"
+        tools:ignore="Autofill,LabelFor" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_activities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:checkedButton="@+id/radio_button_1"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/course_ranking_button">
+
+        <RadioButton
+            android:id="@+id/radio_button_all_activities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/primaryLightColor"
+            android:text="@string/radio_button_all_activities_text"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/radio_button_evaluated_activities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/primaryLightColor"
+            android:text="@string/radio_button_evaluated_activities_text"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/radio_button_not_evaluated_activities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:buttonTint="@color/primaryLightColor"
+            android:text="@string/radio_button_not_evaluated_activities_text"
+            tools:ignore="TextContrastCheck" />
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/course_ranking_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/primaryColor"
+        android:src="@drawable/ic_baseline_stacked_line_chart_24"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/margin_verySmall"
+        android:contentDescription="@string/ranking_button_image_text"
+        app:layout_constraintEnd_toStartOf="@+id/enter_leave_course_button"
+        app:layout_constraintTop_toBottomOf="@+id/student_course_description"
+        app:tint="@color/white" />
+
+    <Button
+        android:id="@+id/enter_leave_course_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:text="@string/course_entry_button"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_course_description"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/course_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:text="@string/student_course_teacher_name_text"
+        android:textColor="@color/primaryColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/course_name"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_course_activities_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_activities" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

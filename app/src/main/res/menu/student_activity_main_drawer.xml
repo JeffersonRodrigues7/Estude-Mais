@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/student_nav_courses"
+            android:icon="@drawable/ic_baseline_book"
+            android:title="@string/menu_courses" />
+
+        <item
+            android:id="@+id/ranking_nav_courses"
+            android:icon="@drawable/ic_baseline_show_chart"
+            android:title="@string/ranking_global" />
+
+        <item
+            android:id="@+id/student_nav_profile"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:title="@string/menu_profile" />
+    </group>
+</menu>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_small"
+    tools:context=".view.teacher.TeacherNewCourseFragment">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/newcourse_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/newcourse_title_text"
+        android:inputType="text"
+        android:minHeight="@dimen/minHeight_field"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill,LabelFor,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/newcourse_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:hint="@string/newcourse_biography_text"
+        android:inputType="text"
+        android:maxLength="500"
+        android:maxLines="10"
+        android:minHeight="@dimen/minHeight_field"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newcourse_title"
+        tools:ignore="Autofill,LabelFor,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/newcourse_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="yes"
+        android:layout_marginTop="@dimen/margin_small"
+        android:hint="@string/newcourse_password_text"
+        android:inputType="textPassword"
+        android:minHeight="@dimen/minHeight_field"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newcourse_description"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/newcourse_createbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primaryColor"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/newcourse_createbutton"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/secondaryTextColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newcourse_password"
+        tools:ignore="TextContrastCheck" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/teacher_nav_courses">
+
+
+
+    <fragment
+        android:id="@+id/teacher_nav_courses"
+        android:name="br.edu.ufabc.estude_mais.view.teacher.TeacherCoursesListFragment"
+        android:label="@string/teacher_menu_Cursos"
+        tools:layout="@layout/teacher_fragment_courses_list" >
+        <action
+            android:id="@+id/action_to_teacherNewCourseFragment"
+            app:destination="@id/teacherNewCourseFragment" />
+        <action
+            android:id="@+id/action_teacher_nav_courses_to_teacherCourseFragment"
+            app:destination="@id/teacherCourseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacher_nav_profile"
+        android:name="br.edu.ufabc.estude_mais.view.teacher.TeacherProfileFragment"
+        android:label="@string/teacher_menu_profile"
+        tools:layout="@layout/teacher_fragment_profile" />
+
+    <fragment
+        android:id="@+id/teacherNewCourseFragment"
+        android:name="br.edu.ufabc.estude_mais.view.teacher.TeacherNewCourseFragment"
+        android:label="Criação de Curso"
+        tools:layout="@layout/teacher_fragment_new_course" >
+        <argument
+            android:name="teacherId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <action
+            android:id="@+id/action_teacherNewCourseFragment_to_teacherCourseFragment"
+            app:destination="@id/teacherCourseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherCourseFragment"
+        android:name="br.edu.ufabc.estude_mais.view.teacher.TeacherCourseFragment"
+        android:label="Curso"
+        tools:layout="@layout/teacher_fragment_course" >
+        <argument
+            android:name="courseId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <action
+            android:id="@+id/action_teacherCourseFragment_to_teacherNewActivityFragment"
+            app:destination="@id/teacherNewActivityFragment" />
+        <action
+            android:id="@+id/action_teacherCourseFragment_to_teacherActivityFragment"
+            app:destination="@id/teacherActivityFragment" />
+        <action
+            android:id="@+id/action_teacherCourseFragment_to_rankingFragment"
+            app:destination="@id/rankingFragment" />
+        <action
+            android:id="@+id/action_teacherCourseFragment_to_teacher_nav_courses"
+            app:destination="@id/teacher_nav_courses" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherNewActivityFragment"
+        android:name="br.edu.ufabc.estude_mais.view.teacher.TeacherNewActivityFragment"
+        android:label="Criação de atividade"
+        tools:layout="@layout/teacher_fragment_new_activity">
+        <argument
+            android:name="courseId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <action
+            android:id="@+id/action_teacherNewActivityFragment_to_teacherActivityFragment"
+            app:destination="@id/teacherActivityFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherActivityFragment"
+        android:name="br.edu.ufabc.estude_mais.view.teacher.TeacherActivityFragment"
+        android:label="Atividade"
+        tools:layout="@layout/teacher_fragment_activity" >
+        <argument
+            android:name="activityId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <argument
+            android:name="courseId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <action
+            android:id="@+id/action_teacherActivityFragment_to_teacherCourseFragment"
+            app:destination="@id/teacherCourseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rankingFragment"
+        android:name="br.edu.ufabc.estude_mais.view.RankingFragment"
+        android:label="Ranking"
+        tools:layout="@layout/fragment_ranking"  >
+        <argument
+            android:name="courseId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+    <fragment
+        android:id="@+id/ranking_nav_courses"
+        android:name="br.edu.ufabc.estude_mais.view.RankingGlobalFragment"
+        android:label="Ranking Global"
+        tools:layout="@layout/fragment_ranking_global" />
+
+</navigation>

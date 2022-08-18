@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/primaryLightColor"
+    android:padding="@dimen/margin_small"
+    tools:context=".view.student.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        android:contentDescription="@string/nav_header_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+    <ImageButton
+        android:id="@+id/update_student_profile"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:contentDescription="@string/update_profile_button"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/primaryColor"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+
+    <TextView
+        android:id="@+id/profile_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_verySmall"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/level_text"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/profile_progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:progress="15"
+        android:progressBackgroundTint="@color/black"
+        android:progressTint="@color/yellow"
+        app:layout_constraintStart_toEndOf="@+id/profile_star"
+        app:layout_constraintTop_toBottomOf="@+id/profile_level" />
+
+    <ImageView
+        android:id="@+id/profile_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_verySmall"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:contentDescription="@string/star_image_profile"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/profile_level"
+        app:srcCompat="@drawable/ic_baseline_star_24"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/profile_experience_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="@string/experience_text"
+        android:textSize="@dimen/very_small_text_size"
+        app:layout_constraintStart_toEndOf="@+id/profile_experience_obtained"
+        app:layout_constraintTop_toBottomOf="@+id/profile_progressbar" />
+
+    <TextView
+        android:id="@+id/profile_experience_obtained"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level_experience_text"
+        android:textSize="@dimen/very_small_text_size"
+        app:layout_constraintStart_toStartOf="@+id/profile_progressbar"
+        app:layout_constraintTop_toBottomOf="@+id/profile_progressbar" />
+
+    <TextView
+        android:id="@+id/student_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:autofillHints="name"
+        android:text="@string/nav_header_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/student_profile_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:autofillHints="name"
+        android:text="@string/username_profile_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_profile_name"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/student_profile_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:text="@string/nav_header_subtitle"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_profile_username"
+        tools:ignore="Autofill,LabelFor" />
+
+    <TextView
+        android:id="@+id/student_profile_biography"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:maxLength="500"
+        android:maxLines="10"
+        android:minHeight="50dp"
+        android:text="@string/biography_text"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_profile_email"
+        tools:ignore="Autofill,LabelFor" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

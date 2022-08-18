@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_small"
+    tools:context=".view.teacher.TeacherActivityFragment">
+
+    <TextView
+        android:id="@+id/teacher_activity_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:text="@string/teacher_activity_name_text"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teacher_activity_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="500"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:maxLines="10"
+        android:minHeight="48dp"
+        android:text="@string/activity_description_text"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_activity_name"
+        tools:ignore="Autofill,LabelFor" />
+
+    <TextView
+        android:id="@+id/teacher_activity_init_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:text="@string/teacher_activity_init_date_text"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_activity_description"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/teacher_activity_deadline_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:text="@string/teacher_activity_deadline_date_text"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_activity_init_date"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/update_activity_profile"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/primaryColor"
+        android:contentDescription="@string/update_profile_button"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_activity_deadline_date"
+        app:tint="@color/White" />
+
+    <ImageButton
+        android:id="@+id/activity_delete_button"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:contentDescription="@string/delete_acitivity_button"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/red"
+        android:src="@drawable/ic_baseline_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_activity_deadline_date"
+        app:tint="@color/white" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_teacher_activity_students_list"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_verySmall"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_delete_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
